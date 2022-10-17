@@ -1,0 +1,2 @@
+class SpreadsController < ApplicationController
+end
