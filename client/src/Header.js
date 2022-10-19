@@ -10,6 +10,8 @@ function Header({ user, doLogout }) {
         }).then(() => doLogout())
     }
 
+    console.log(user)
+
     return(
         <>
             <h1>Tarot</h1>

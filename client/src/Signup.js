@@ -6,13 +6,13 @@ function Signup() {
     const [errors, setErrors] = useState([])
     const navigate = useNavigate();
     const [formData, setFormData] = useState({
-        firstName: '',
-        lastName: '',
+        first_name: '',
+        last_name: '',
         username: '',
         password: '',
         email: ''
     })
-    const { firstName, lastName, username, password, email } = formData
+    const { first_name, last_name, username, password, email } = formData
 
     function handleChange(e) {
         const { name, value } = e.target
@@ -38,8 +38,8 @@ function Signup() {
             }
         })
         setFormData({
-            firstName: '',
-            lastName: '',
+            first_name: '',
+            last_name: '',
             username: '',
             password: '',
             email: ''
@@ -53,15 +53,15 @@ function Signup() {
                 <input 
                     placeholder="First name"
                     type="text"
-                    name="firstName"
-                    value={firstName}
+                    name="first_name"
+                    value={first_name}
                     onChange={handleChange}
                 />
                 <input 
                     placeholder="Last name"
                     type="text"
-                    name="lastName"
-                    value={lastName}
+                    name="last_name"
+                    value={last_name}
                     onChange={handleChange}
                 />
                 <input 
