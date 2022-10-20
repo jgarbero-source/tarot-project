@@ -21,7 +21,7 @@ function Header({ user, doLogout }) {
             </Link>}
             { user ? (
                 <div>
-                    <h2>Welcome, {user.firstName} {user.lastName}!</h2>
+                    <h2>Welcome, {user.first_name} {user.last_name}!</h2>
                     <button onClick={handleLogout}>Logout</button>
                 </div>
             ) : (

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 
-function Login({ handleLogin }) {
+function Login({ setUser }) {
 
     const [formData, setFormData] = useState({
         username: '',
@@ -28,7 +28,7 @@ function Login({ handleLogin }) {
             if (r.ok) {
               r.json().then((user) => 
               {
-                handleLogin(user)
+                setUser(user)
                 navigate('/') //change to user
               })
             } else {
