@@ -1,16 +1,17 @@
 import {useEffect, useState} from "react";
 
+
 function Card({ card }) {
 
     const { name, arcana, archetype, elemental, fortune_telling, hebrew, img, keywords, light_meanings, shadow_meanings, mythical, number, numerology, questions, suit } = card
 
-    console.log(name)
+    console.log(img)
 
     return(
         <div>
             <ul>
                 <h3>{name}</h3>
-                <img src={img}/>
+                {/* <img src={img}/> */}
             </ul>
         </div>
     )
