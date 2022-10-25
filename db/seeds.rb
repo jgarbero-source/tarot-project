@@ -23,7 +23,7 @@ cards_array.each do |card|
         number: card['number'],
         arcana: card['arcana'],
         suit: card['suit'],
-        img: "db/cards/#{card["img"]}",
+        img: "#{card["img"]}",
         fortune_telling: card['fortune_telling'],
         keywords: card['keywords'],
         light_meanings: card['meanings']['light'],
@@ -34,7 +34,7 @@ cards_array.each do |card|
         elemental: card['Elemental'],
         mythical: card['Mythical/Spiritual'],
         questions: card['Questions to Ask'],
-        backImg: 'db/cards/back.jpg',
+        backImg: 'back.jpg',
         astrology: card['Astrology'],
         affirmation: card['Affirmation']
     )
