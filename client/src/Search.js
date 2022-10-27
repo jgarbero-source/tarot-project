@@ -4,7 +4,6 @@ function Search({ handleSearch }) {
 
     return (
         <div>
-            Search by Card
             <input
                 type="text"
                 placeholder="Card name"
