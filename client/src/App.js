@@ -15,6 +15,8 @@ import UserSpreads from './UserSpreads';
 
 function App() {
   const [user, setUser] = useState(null)
+  const [cards, setCards] = useState([])
+  const [trueCards, setTrueCards] = useState([])
   const navigate = useNavigate();
 
   function doLogout() {
@@ -31,7 +33,6 @@ function App() {
     fetch("/me").then((response) => { 
       if (response.ok) {
         response.json().then((client) => {
-          console.log(client)
           setUser(client);
         });
       } else {
@@ -39,6 +40,15 @@ function App() {
       }
     });
   }, []);
+
+  useEffect(() => {
+    fetch("/cards")
+        .then(r=>r.json())
+        .then(r=> {
+            setCards(r)
+            setTrueCards(r)
+    })
+  }, [])
 
   return (
     <div className="App">
@@ -49,9 +59,9 @@ function App() {
         <Route path ="/" element={<Home user={user}/>}/>
         <Route path="/signup" element={<Signup />}/>
         <Route path="/login" element={<Login setUser={setUser} />}/>
-        <Route path="/cards" element={<Cards user={user}/>}/>
+        <Route path="/cards" element={<Cards cards={cards} setCards={setCards} trueCards={trueCards} />}/>
         <Route path="/user" element={<User user={user} deleteUser={deleteUser}/>}/>
-        <Route path="/spreads" element={<Spreads/>}/>
+        <Route path="/spreads" element={<Spreads trueCards={trueCards}/>}/>
         <Route path="/user/spreads" element={<UserSpreads/> }/>
       </Routes>
     </div>

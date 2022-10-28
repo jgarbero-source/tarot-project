@@ -2,19 +2,8 @@ import { useEffect, useState } from "react";
 import Card from "./Card.js";
 import Search from "./Search.js";
 
-function Cards() {
-    const [cards, setCards] = useState([])
-    const [trueCards, setTrueCards] = useState([])
+function Cards({ cards, setCards, trueCards }) {
     const [search, setSearch] = useState("")
-
-    useEffect(() => {
-        fetch("/cards")
-            .then(r=>r.json())
-            .then(r=> {
-                setCards(r)
-                setTrueCards(r)
-        })
-    }, [])
 
     function handleSearch(e) {
         setSearch(e.target.value)
