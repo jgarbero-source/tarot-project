@@ -1,9 +1,9 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import back from "./cards/back.jpg"
+import SpreadContainer from "./SpreadContainer";
 
-function Spreads({ trueCards }) {
-
-    let spread = []
+function Spreads({ trueCards, user }) {
+    const [spread, setSpread] = useState([])
 
     function handleClick(array) {
         let copy = array.slice(0);
@@ -12,15 +12,21 @@ function Spreads({ trueCards }) {
           let index = Math.floor(Math.random() * copy.length);
           let item = copy[index];
           copy.splice(index, 1);
-          spread.push(item)
-        console.log(spread)
+          setSpread([...spread, item])
         };
+    }
+
+    function resetSpread() {
+        setSpread([])
     }
 
     return(
         <div>
             <h3>Click on the deck to pull a card</h3>
-            <img src={back} onClick={handleClick(trueCards)}/>
+            <img src={back} alt="" onClick={handleClick(trueCards)}/>
+            <br />
+            <button onClick={resetSpread}>Reset Spread</button>
+            <SpreadContainer spread={spread} user={user} />
         </div>
     )
 }

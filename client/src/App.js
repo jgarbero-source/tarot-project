@@ -61,7 +61,7 @@ function App() {
         <Route path="/login" element={<Login setUser={setUser} />}/>
         <Route path="/cards" element={<Cards cards={cards} setCards={setCards} trueCards={trueCards} />}/>
         <Route path="/user" element={<User user={user} deleteUser={deleteUser}/>}/>
-        <Route path="/spreads" element={<Spreads trueCards={trueCards}/>}/>
+        <Route path="/spreads" element={<Spreads user={user} trueCards={trueCards}/>}/>
         <Route path="/user/spreads" element={<UserSpreads/> }/>
       </Routes>
     </div>
