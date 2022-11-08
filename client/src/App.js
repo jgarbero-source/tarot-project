@@ -12,6 +12,8 @@ import User from './User';
 import Spreads from './Spreads';
 import UserSpreads from './UserSpreads';
 
+//if there is trouble, run sudo service postgresql start
+
 
 function App() {
   const [user, setUser] = useState(null)

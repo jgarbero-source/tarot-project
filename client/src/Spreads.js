@@ -6,6 +6,7 @@ function Spreads({ trueCards, user }) {
     const [spread, setSpread] = useState([])
 
     function handleClick(array) {
+        let p = Math.random(); 
         let copy = array.slice(0);
         return function() {
           if (copy.length < 1) { copy = array.slice(0); }
