@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Card from "./Card";
 
-function SpreadContainer({ spread, user }) {
+function SpreadContainer({ spread, user, flipped }) {
     const [formData, setFormData] = useState({});
     const [errors, setErrors] = useState([]);
 
@@ -42,7 +42,7 @@ function SpreadContainer({ spread, user }) {
     return(
         <div>
             {spread.map(card => (
-                <Card key={card.id} card={card}/>
+                <Card key={card.id} card={card} flipped={flipped}/>
             ))}
             {spread.length === 0 ? null : 
             <button onClick={handleSave}>Save Spread</button>}

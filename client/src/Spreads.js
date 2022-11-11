@@ -4,9 +4,10 @@ import SpreadContainer from "./SpreadContainer";
 
 function Spreads({ trueCards, user }) {
     const [spread, setSpread] = useState([])
+    const [flipped, setFlipped] = useState("false")
 
     function handleClick(array) {
-        let p = Math.random(); 
+        let p = Math.random() * 100; 
         let copy = array.slice(0);
         return function() {
           if (copy.length < 1) { copy = array.slice(0); }
@@ -27,7 +28,7 @@ function Spreads({ trueCards, user }) {
             <img src={back} alt="" onClick={handleClick(trueCards)}/>
             <br />
             <button onClick={resetSpread}>Reset Spread</button>
-            <SpreadContainer spread={spread} user={user} />
+            <SpreadContainer flipped={flipped} spread={spread} user={user} />
         </div>
     )
 }

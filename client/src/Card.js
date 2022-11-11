@@ -1,8 +1,8 @@
 import {useEffect, useState} from "react";
 import back from "./cards/back.jpg"
 
-function Card({ card }) {
-
+function Card({ card, flipped }) {
+    
     const { name, arcana, archetype, elemental, fortune_telling, hebrew, img, keywords, light_meanings, shadow_meanings, mythical, number, numerology, questions, suit } = card
 
   
@@ -18,7 +18,7 @@ function Card({ card }) {
                     ))} */}
                     {keywords}
                 </p>
-                <img src={require(`./cards/${img}`)}/>
+                <img class={flipped ? "flipper" : null} src={require(`./cards/${img}`)}/>
                 <p>
                     Psychic meanings: 
                     {fortune_telling?.map(line=> (
@@ -49,3 +49,5 @@ function Card({ card }) {
 }
 
 export default Card;
+
+//I think what I need to do is go add a column to each card to indicate whether or not its flipped. When a card is pulled, depending on the probability, we can turn it to flipped or not. One problem this poses though is that if it flips it will also be flipped in the main section too. 
