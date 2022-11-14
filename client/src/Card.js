@@ -5,7 +5,7 @@ function Card({ card, flipped }) {
     
     const { name, arcana, archetype, elemental, fortune_telling, hebrew, img, keywords, light_meanings, shadow_meanings, mythical, number, numerology, questions, suit } = card
 
-  
+    // class={flipped ? "flipper" : null} 
 
     return(
         <div>
@@ -18,7 +18,7 @@ function Card({ card, flipped }) {
                     ))} */}
                     {keywords}
                 </p>
-                <img class={flipped ? "flipper" : null} src={require(`./cards/${img}`)}/>
+                <img src={require(`./cards/${img}`)}/>
                 <p>
                     Psychic meanings: 
                     {fortune_telling?.map(line=> (

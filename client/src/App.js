@@ -11,6 +11,7 @@ import UserNavBar from './UserNavBar';
 import User from './User';
 import Spreads from './Spreads';
 import UserSpreads from './UserSpreads';
+import UserEdit from './UserEdit';
 
 //if there is trouble, run sudo service postgresql start
 
@@ -65,6 +66,7 @@ function App() {
         <Route path="/user" element={<User user={user} deleteUser={deleteUser}/>}/>
         <Route path="/spreads" element={<Spreads user={user} trueCards={trueCards}/>}/>
         <Route path="/user/spreads" element={<UserSpreads/> }/>
+        <Route path="/user/edit" element={<UserEdit user={user} />}/>
       </Routes>
     </div>
   );
